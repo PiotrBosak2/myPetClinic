@@ -14,7 +14,7 @@
     </parent>
     <groupId>pb.spring</groupId>
     <artifactId>my-pet-clinic</artifactId>
-    <version>2.2.4</version>
+    <version>2.2.5-SNAPSHOT</version>
     <name>my-pet-clinic</name>
     <description>Demo project for Spring Boot</description>
 
@@ -44,7 +44,7 @@
     </build>
     <scm>
         <developerConnection>scm:git:https://github.com/PiotrBosak/myPetClinic.git</developerConnection>
-      <tag>my-pet-clinic-2.2.4</tag>
+      <tag>HEAD</tag>
   </scm>
 
 </project>

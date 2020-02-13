@@ -3,12 +3,12 @@
     <parent>
         <artifactId>my-pet-clinic</artifactId>
         <groupId>pb.spring</groupId>
-        <version>2.2.4</version>
+        <version>2.2.5-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>pet-clinic-web</artifactId>
-  <version>0.0.3</version>
+  <version>0.0.4-SNAPSHOT</version>
 
 
 <properties>
@@ -20,7 +20,7 @@
         <dependency>
             <artifactId>pet-clinic-data</artifactId>
             <groupId>pb.spring</groupId>
-            <version>0.0.3</version>
+            <version>0.0.4-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
