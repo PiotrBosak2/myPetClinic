@@ -6,8 +6,6 @@ import pb.spring.mypetclinic.model.Owner;
 import pb.spring.mypetclinic.model.Vet;
 import pb.spring.mypetclinic.services.OwnerService;
 import pb.spring.mypetclinic.services.VetService;
-import pb.spring.mypetclinic.services.map.OwnerServiceMap;
-import pb.spring.mypetclinic.services.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -15,11 +13,10 @@ public class DataLoader implements CommandLineRunner {
     private  final OwnerService ownerService;
     private final VetService vetService;
 
-
-
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    //@Autowired   for constructor not needed
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
