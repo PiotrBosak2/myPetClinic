@@ -3,8 +3,10 @@ package pb.spring.mypetclinic.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import pb.spring.mypetclinic.model.Owner;
+import pb.spring.mypetclinic.model.PetType;
 import pb.spring.mypetclinic.model.Vet;
 import pb.spring.mypetclinic.services.OwnerService;
+import pb.spring.mypetclinic.services.PetTypeService;
 import pb.spring.mypetclinic.services.VetService;
 
 @Component
@@ -12,15 +14,32 @@ public class DataLoader implements CommandLineRunner {
 
     private  final OwnerService ownerService;
     private final VetService vetService;
+    private final PetTypeService petService;
 
     //@Autowired   for constructor not needed
-    public DataLoader(OwnerService ownerService, VetService vetService) {
+    public DataLoader(OwnerService ownerService, VetService vetService,PetTypeService petService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
+        this.petService = petService;
     }
 
     @Override
     public void run(String... args) throws Exception {
+
+        PetType dog = new PetType();
+        dog.setName("Dog");
+        PetType saveDogType = petService.save(dog);
+
+        PetType cat = new PetType();
+        dog.setName("Cat");
+        PetType saveCatType = petService.save(cat);
+
+
+
+
+
+
+
 
         Owner owner1 = new Owner();
 
@@ -55,6 +74,9 @@ public class DataLoader implements CommandLineRunner {
         vet2.setLastName("Porter");
 
         vetService.save(vet2);
+
+
+
 
         System.out.println("Loaded Vets....");
     }
