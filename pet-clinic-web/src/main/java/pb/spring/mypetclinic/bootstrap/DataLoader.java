@@ -3,10 +3,7 @@ package pb.spring.mypetclinic.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import pb.spring.mypetclinic.model.*;
-import pb.spring.mypetclinic.services.OwnerService;
-import pb.spring.mypetclinic.services.PetTypeService;
-import pb.spring.mypetclinic.services.SpecialityService;
-import pb.spring.mypetclinic.services.VetService;
+import pb.spring.mypetclinic.services.*;
 
 import java.time.LocalDate;
 
@@ -17,12 +14,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
     //@Autowired   for constructor not needed
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -75,6 +74,13 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(owner2);
 
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionasCat);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("sore throat");
+        visitService.save(catVisit);
+
+
         Owner owner3 = new Owner();
         owner3.setFirstName("twoj");
         owner3.setLastName("stary");
@@ -116,5 +122,7 @@ public class DataLoader implements CommandLineRunner {
 
 
         System.out.println("Loaded Vets....");
+
+
     }
 }
