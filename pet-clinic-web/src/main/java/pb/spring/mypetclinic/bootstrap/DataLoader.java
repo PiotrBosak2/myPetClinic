@@ -1,5 +1,6 @@
 package pb.spring.mypetclinic.bootstrap;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import pb.spring.mypetclinic.model.*;
@@ -7,6 +8,7 @@ import pb.spring.mypetclinic.services.*;
 
 import java.time.LocalDate;
 
+@Slf4j
 @Component
 public class DataLoader implements CommandLineRunner {
 

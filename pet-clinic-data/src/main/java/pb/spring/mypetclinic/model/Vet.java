@@ -1,9 +1,12 @@
 package pb.spring.mypetclinic.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Data
 @Entity
 @Table(name = "vets")
 public class Vet extends Person {
@@ -22,11 +25,4 @@ public class Vet extends Person {
         super(firstName, lastName);
     }
 
-    public Set<Speciality> getSpecialities() {
-        return specialities;
-    }
-
-    public void setSpecialities(Set<Speciality> specialities) {
-        this.specialities = specialities;
-    }
 }
